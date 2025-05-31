@@ -9,16 +9,16 @@ matrix:
     - 8.4
 steps:
   "Test docker build":
-      image: woodpeckerci/plugin-docker-buildx
-      settings:
-        dockerfile: ./docker/Dockerfile
-        repo: registry.fourstrings.duckdns.org/hauke/citools
-        dry-run: true
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dockerfile: ./docker/Dockerfile
+      repo: registry.fourstrings.duckdns.org/hauke/citools
+      dry-run: true
   "Docker build and push":
-      image: woodpeckerci/plugin-docker-buildx
-      settings:
-        dockerfile: ./docker/Dockerfile
-        repo: registry.fourstrings.duckdns.org/hauke/citools
-        registry: registry.fourstrings.duckdns.org
-        platforms: linux/arm64,windows/amd64,darwin/amd64,darwin/arm64
-        tags: ${PHP_VERSION} 
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dockerfile: ./docker/Dockerfile
+      repo: registry.fourstrings.duckdns.org/hauke/citools
+      registry: registry.fourstrings.duckdns.org
+      platforms: linux/arm64,windows/amd64,darwin/amd64,darwin/arm64
+      tags: ${PHP_VERSION} 
