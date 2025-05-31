@@ -20,7 +20,7 @@ steps:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       build_args: 
-        PHP_VERSION: ${PHP_VERSION}
+        PHP: ${PHP_VERSION}
       dockerfile: ./docker/Dockerfile
       repo: registry.fourstrings.duckdns.org/hauke/citools
       registry: registry.fourstrings.duckdns.org
