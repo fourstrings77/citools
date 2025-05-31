@@ -26,5 +26,3 @@ steps:
       registry: registry.fourstrings.duckdns.org
       platforms: linux/arm64,windows/amd64,darwin/amd64,darwin/arm64
       tags: ${PHP_VERSION}
-    when:
-      - event: tag
