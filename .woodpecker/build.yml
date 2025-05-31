@@ -26,5 +26,5 @@ steps:
       dockerfile: ./docker/Dockerfile
       repo: registry.fourstrings.duckdns.org/hauke/citools
       registry: registry.fourstrings.duckdns.org
-      platforms: linux/arm64
+      platforms: linux/arm64, linux/amd64
       tags: ${PHP_VERSION}
