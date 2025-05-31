@@ -5,14 +5,15 @@ matrix:
   PHP_VERSION:
     - 8.1
     - 8.2
-#    - 8.3
-#    - 8.4
+    - 8.3
+    - 8.4
 steps:
   "Test docker build":
     image: woodpeckerci/plugin-docker-buildx
     settings:
       build_args: 
-        PHPVERSION: ${PHP_VERSION}
+        - PHPVERSION: ${PHP_VERSION}
+        - PHP_VERSION: ${PHP_VERSION}
       dockerfile: ./docker/Dockerfile
       repo: registry.fourstrings.duckdns.org/hauke/citools
       dry-run: true
@@ -20,9 +21,10 @@ steps:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       build_args: 
-        PHPVERSION: ${PHP_VERSION}
+        - PHPVERSION: ${PHP_VERSION}
+        - PHP_VERSION: ${PHP_VERSION}
       dockerfile: ./docker/Dockerfile
       repo: registry.fourstrings.duckdns.org/hauke/citools
       registry: registry.fourstrings.duckdns.org
-      platforms: linux/arm64,windows/amd64,darwin/amd64,darwin/arm64
+      platforms: linux/arm64,windows/amd64
       tags: ${PHP_VERSION}
