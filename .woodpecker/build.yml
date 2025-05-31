@@ -12,7 +12,7 @@ steps:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       build_args: 
-        PHP_VERSION: ${PHP_VERSION}
+        PHP: ${PHP_VERSION}
       dockerfile: ./docker/Dockerfile
       repo: registry.fourstrings.duckdns.org/hauke/citools
       dry-run: true
@@ -25,4 +25,6 @@ steps:
       repo: registry.fourstrings.duckdns.org/hauke/citools
       registry: registry.fourstrings.duckdns.org
       platforms: linux/arm64,windows/amd64,darwin/amd64,darwin/arm64
-      tags: ${PHP_VERSION} 
+      tags: ${PHP_VERSION}
+    when:
+      - event: tag
