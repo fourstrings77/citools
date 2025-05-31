@@ -1,7 +1,7 @@
-ARG PHP="8.2"
+ARG PHPVERSION="8.2"
 
 
-FROM php:${PHP}-cli-alpine
+FROM php:${PHPVERSION}-cli-alpine
 
 RUN apk add --no-cache git unzip
 
