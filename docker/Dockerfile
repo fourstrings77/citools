@@ -13,7 +13,7 @@ RUN composer global require \
     squizlabs/php_codesniffer \
     phpstan/phpstan \
     phpunit/phpunit \
-    --prefer-dist --no-interaction --no-progress --no-dev --optimize-autoloader
+    --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
 ENV PATH="/root/.composer/vendor/bin:${PATH}"
 
